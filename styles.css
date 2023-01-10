@@ -1,0 +1,74 @@
+* {
+  padding: 0;
+  margin: o;
+  box-sizing: border-box;
+}
+body {
+  background-color: black;
+  overflow: hidden;
+}
+.container {
+  border: solid white 3px;
+  width: 1280px;
+  height: 720px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+}
+
+.canvas1 {
+  background-image: url("background.png");
+  width: 1280px;
+  height: 720px;
+}
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.leavesLeft {
+  position: absolute;
+  top: 50px;
+  left: -100px;
+  transition: 0.3s;
+  animation: wobble ease-in-out 1.5s infinite;
+  pointer-events: none;
+}
+canvas:hover ~ .leavesLeft {
+  left: -150px;
+  transform: rotate(15deg);
+}
+.leavesRight {
+  position: absolute;
+  top: 50px;
+  right: -100px;
+  transition: 0.2s;
+  animation: wobble ease-in-out 1.6s infinite;
+  pointer-events: none;
+}
+canvas:hover ~ .leavesRight {
+  right: -150px;
+  transform: rotate(-15deg);
+}
+@keyframes wobble {
+  0% {
+    top: 50px;
+  }
+  50% {
+    top: 56px;
+  }
+  100% {
+    top: 50px;
+  }
+}
+.owlBear,
+.grassImg,
+.plantImg,
+.bushImg {
+  display: none;
+}
